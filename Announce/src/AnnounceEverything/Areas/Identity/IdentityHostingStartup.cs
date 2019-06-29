@@ -1,5 +1,5 @@
 ﻿using System;
-using AnnounceEverything.Areas.Identity.Data;
+using AnnounceEverything.Data;
 using AnnounceEverything.Models;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
