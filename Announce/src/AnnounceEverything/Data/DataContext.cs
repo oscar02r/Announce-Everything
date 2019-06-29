@@ -24,7 +24,7 @@ namespace AnnounceEverything.Models
 
         public DbSet<Category> Categories { get; set; }
 
-        public  DbSet<Kind> Kinds { get; set; }
+        public  DbSet<UserKind> UserKinds { get; set; }
 
 
         protected override void OnModelCreating(ModelBuilder builder)

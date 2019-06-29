@@ -6,7 +6,7 @@ namespace AnnounceEverything.Data
 
     public class AppUser : IdentityUser
     {
-        public Kind Type { get; set; }
+        public UserKind Type { get; set; }
 
         public string Telephone { get; set; }
 
