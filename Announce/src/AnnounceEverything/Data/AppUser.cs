@@ -1,13 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using AnnounceEverything.Models;
 using Microsoft.AspNetCore.Identity;
 
 namespace AnnounceEverything.Data
 {
-    // Add profile data for application users by adding properties to the AppUser class
+
     public class AppUser : IdentityUser
     {
+        public Kind Type { get; set; }
+
+        public string Telephone { get; set; }
+
+        public Province Province { get; set; }
     }
 }

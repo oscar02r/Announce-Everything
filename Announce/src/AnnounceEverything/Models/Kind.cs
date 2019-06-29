@@ -1,6 +1,6 @@
 ﻿namespace AnnounceEverything.Models
 {
-    public class Category
+    public class Kind
     {
         public int Id { get; set; }
 
