@@ -1,8 +1,9 @@
-﻿using AnnounceEverything.Data;
+﻿
+using AnnounceEverything.Models;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
-namespace AnnounceEverything.Models
+namespace AnnounceEverything.Data
 {
     public class DataContext : IdentityDbContext<AppUser>
     {
@@ -10,6 +11,8 @@ namespace AnnounceEverything.Models
             : base(options)
         {
         }
+
+        #region Properties to become tables on datases
 
         public DbSet<Announce> Announces { get; set; }
 
@@ -21,6 +24,7 @@ namespace AnnounceEverything.Models
 
         public DbSet<UserKind> UserKinds { get; set; }
 
+        #endregion
 
         protected override void OnModelCreating(ModelBuilder builder)
         {

@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace AnnounceEverything.Models
 {
-    public class UserKind
+    public class UserKind 
     {
         public byte Id { get; set; }
 

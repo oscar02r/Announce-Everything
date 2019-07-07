@@ -2,7 +2,7 @@
 
 namespace AnnounceEverything.Models
 {
-    public class Category
+    public class Category 
     {
         public byte Id { get; set; }
 
