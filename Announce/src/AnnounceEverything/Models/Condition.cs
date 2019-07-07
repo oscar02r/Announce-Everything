@@ -5,9 +5,9 @@ namespace AnnounceEverything.Models
 {
     public class Condition
     {
-        public int Id { get; set; }
+        public byte Id { get; set; }
 
-        [MaxLength(100)]
+        [MaxLength(80)]
         public string Name { get; set; }
     }
 }

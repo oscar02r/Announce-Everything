@@ -8,6 +8,12 @@
   <ItemGroup>
     <Compile Remove="Migrations\20190629014235_AnnoncesModel.cs" />
     <Compile Remove="Migrations\20190629014235_AnnoncesModel.Designer.cs" />
+    <Compile Remove="Migrations\20190707132500_ModelCorePropety.cs" />
+    <Compile Remove="Migrations\20190707132500_ModelCorePropety.Designer.cs" />
+    <Compile Remove="Migrations\20190707132647_ModelProrpety.cs" />
+    <Compile Remove="Migrations\20190707132647_ModelProrpety.Designer.cs" />
+    <Compile Remove="Migrations\20190707133229_ModelCoreProperty.cs" />
+    <Compile Remove="Migrations\20190707133229_ModelCoreProperty.Designer.cs" />
   </ItemGroup>
 
 
