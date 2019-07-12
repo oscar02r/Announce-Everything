@@ -12,7 +12,7 @@ namespace AnnounceEverything.Models
         [StringLength(50,MinimumLength = 5)]
         public string Title { get; set; }
 
-        public DateTime Date { get; set; }
+        public DateTime DateTime { get; set; }
 
 
         [Required]

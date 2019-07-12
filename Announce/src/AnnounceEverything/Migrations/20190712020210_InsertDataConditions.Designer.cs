@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AnnounceEverything.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20190707211359_InsertDataStatic1")]
-    partial class InsertDataStatic1
+    [Migration("20190712020210_InsertDataConditions")]
+    partial class InsertDataConditions
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -93,7 +93,7 @@ namespace AnnounceEverything.Migrations
 
                     b.Property<byte>("ConditionId");
 
-                    b.Property<DateTime>("Date");
+                    b.Property<DateTime>("DateTime");
 
                     b.Property<string>("Description")
                         .HasMaxLength(300);
