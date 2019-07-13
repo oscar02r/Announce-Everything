@@ -5,7 +5,7 @@ namespace AnnounceEverything.Models
 {
     public class Province 
     {
-        public byte Id { get; set; }
+        public int Id { get; set; }
 
         [MaxLength(80)]
         public string Name { get; set; }

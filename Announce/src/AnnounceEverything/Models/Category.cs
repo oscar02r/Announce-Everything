@@ -4,8 +4,9 @@ namespace AnnounceEverything.Models
 {
     public class Category 
     {
-        public byte Id { get; set; }
+        public int Id { get; set; }
 
+        [Required]
         [MaxLength(80)]
         public string Name { get; set; }
     }
