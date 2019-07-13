@@ -46,7 +46,7 @@ namespace AnnounceEverything.ViewModels
 
         public string Time { get; set; }
 
-        public DateTime GetDateTime()
+        public DateTime GetFullDate()
         {
             return DateTime.Parse($"{Date} {Time}");
         }

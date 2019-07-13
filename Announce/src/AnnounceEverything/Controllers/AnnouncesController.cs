@@ -1,9 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 using AnnounceEverything.Data;
+using AnnounceEverything.Models;
 using AnnounceEverything.ViewModels;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
@@ -18,6 +21,7 @@ namespace AnnounceEverything.Controllers
             _context = datacontext;
         }
 
+        [Authorize]
         public IActionResult Create()
         {
             var category = _context.Categories.ToList();
@@ -35,9 +39,30 @@ namespace AnnounceEverything.Controllers
             return View(vm);
         }
 
-        public IActionResult Index()
+        [Authorize]
+        [HttpPost]
+        public IActionResult Create(AnnounceViewModel vm)
         {
-            return View();
+           
+     
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            var model = new Announce
+            {
+              UserId = userId,
+              Title = vm.Title,
+              DateTime = vm.GetFullDate(),
+              CategoryId = vm.Categoryid,
+              ProvinceId = vm.ProvinceId,
+              Image = vm.Image,
+              Price = vm.Price,
+              Description = vm.Description,
+              ConditionId = vm.ConditionId
+            };
+
+            _context.Add(model);
+            _context.SaveChanges();
+
+            return RedirectToAction("Index","Home");
         }
 
     }
