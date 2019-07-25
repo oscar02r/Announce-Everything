@@ -8,7 +8,7 @@ namespace AnnounceEverything.ViewModels
 {
     public class UserViewModel
     {
-        public int Id { get; set; }
+        public int UserKindId { get; set; }
         public IEnumerable <SelectListItem> UserKind { get; set; }
     }
 }

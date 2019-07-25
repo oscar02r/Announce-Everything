@@ -17,6 +17,12 @@
                 <input asp-for="Input.Email" class="form-control" />
                 <span asp-validation-for="Input.Email" class="text-danger"></span>
             </div>
+
+            <div class="form-group">
+                <label asp-for="Input.UserKindId"></label>
+                <select asp-for="Input.UserKindId" asp-items="@(Model.Input.Userkind)" class="form-control"></select>
+            </div>
+
             <div class="form-group">
                 <label asp-for="Input.Password"></label>
                 <input asp-for="Input.Password" class="form-control" />

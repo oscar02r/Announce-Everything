@@ -7,12 +7,7 @@ namespace AnnounceEverything.Data
 
     public class AppUser : IdentityUser
     {
-        [Required]
-        public Province Province { get; set; }
-
-        [Required]
-        public string Telephone { get; set; }
-
+        public int UserKindId { get; set; }
         [Required]
         public UserKind Kind { get; set; }
     }
