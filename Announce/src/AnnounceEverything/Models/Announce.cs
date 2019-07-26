@@ -17,10 +17,10 @@ namespace AnnounceEverything.Models
 
         public DateTime DateTime { get; set; }
 
-       // public int ConditionId { get; set; }
+        public int ConditionId { get; set; }
 
-       // [Required]
-       // public Condition Condition { get; set; }
+        [Required]
+        public Condition Condition { get; set; }
 
         [Required]
         [MinLength(3)]
@@ -33,16 +33,16 @@ namespace AnnounceEverything.Models
         [MaxLength(100)]
         public string Image { get; set; }
 
-      //  public int CategoryId { get; set; }
+        public int CategoryId { get; set; }
 
-       // [Required]
-        //[MaxLength(50)]
-        //public Category Category { get; set; }
+        [Required]
+        [MaxLength(50)]
+        public Category Category { get; set; }
 
-       // public int ProvinceId { get; set; }
+        public int ProvinceId { get; set; }
 
-       // [Required]
-        //public Province Province { get; set; }
+        [Required]
+        public Province Province { get; set; }
 
         
         public string UserId { get; set; }
