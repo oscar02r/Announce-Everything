@@ -2,10 +2,15 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Mvc;
 
 namespace AnnounceEverything.Controllers
 {
-    public class AnnounceController
+    public class AnnounceController : Controller
     {
+        public IActionResult Index()
+        {
+            return View();
+        }
     }
 }
