@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Identity;
 
-namespace AnnounceEverything.Data
+namespace AnnounceEverything.ViewModels
 {
-    public class AppUser : IdentityUser
+    public class AnnounceViewModel
     {
+
     }
 }

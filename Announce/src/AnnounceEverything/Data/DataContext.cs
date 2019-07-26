@@ -16,12 +16,24 @@ namespace AnnounceEverything.Models
         {
         }
 
+        #region Properties to become tables on datases
+
+        public DbSet<Announce> Announces { get; set; }
+
+        public DbSet<Province> Provinces { get; set; }
+
+        public DbSet<Condition> Conditions { get; set; }
+
+        public DbSet<Category> Categories { get; set; }
+
+        public DbSet<TypeUser> TypeUsers { get; set; }
+
+        #endregion
+
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
-            // Customize the ASP.NET Identity model and override the defaults if needed.
-            // For example, you can rename the ASP.NET Identity table names and more.
-            // Add your customizations after calling base.OnModelCreating(builder);
+           
         }
     }
 }
