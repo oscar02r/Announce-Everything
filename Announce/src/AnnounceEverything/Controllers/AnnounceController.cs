@@ -67,7 +67,7 @@ namespace AnnounceEverything.Controllers
                 return RedirectToAction("Index","Home");
             }
             
-            return View();
+            return View("Create");
         }
     }
 }
