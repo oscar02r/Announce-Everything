@@ -20,7 +20,7 @@ namespace AnnounceEverything.Controllers
             _context = context;
         }
 
-        //[Authorize]
+        [Authorize]
         public IActionResult Create()
         {
             var category = _context.Categories.ToList();
@@ -66,8 +66,9 @@ namespace AnnounceEverything.Controllers
 
                 return RedirectToAction("Index","Home");
             }
-            
-            return View("Create");
+
+            // return RedirectToAction("Create","Announce");
+            return View();
         }
     }
 }

@@ -7,6 +7,9 @@
     ViewData["Title"] = "Create";
 }
 
+@*<p class="alert alert-success">
+        Todos los campos son  <strong>requeridos</strong>
+    </p>*@
 <form asp-action="Create">
     <div class="form-group">
         <label asp-for="Title">Título</label>
@@ -55,5 +58,11 @@
     </div>
 
 
+
     <button type="submit" class="btn btn-primary">Submit</button>
 </form>
+
+@section Scripts {
+    <script src="~/lib/jquery-validation/dist/jquery.validate.js"></script>
+<script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script> 
+}
