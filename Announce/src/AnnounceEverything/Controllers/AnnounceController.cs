@@ -24,7 +24,7 @@ namespace AnnounceEverything.Controllers
         public IActionResult Create()
         {
             var category = _context.Categories.ToList();
-            var conditon = _context.Conditions.ToList();
+            var condition = _context.Conditions.ToList();
             var province = _context.Provinces.ToList();
 
             //ViewBag.categoriesid = new SelectList(category,"Id","Name");
@@ -32,18 +32,19 @@ namespace AnnounceEverything.Controllers
             var vm = new AnnounceViewModel
             {
                 Category = new SelectList(category, "Id", "Name"),
-                Condition = new SelectList(conditon, "Id", "Name"),
+                Condition = new SelectList(condition, "Id", "Name"),
                 Province = new SelectList(province, "Id", "Name")
             };
             return View(vm);
         }
 
-        [HttpPost]
         [Authorize]
+        [HttpPost]
         public IActionResult Create(AnnounceViewModel vm)
         {
             if (ModelState.IsValid)
             {
+                //var userId = User.Identity.GetUserId();
                 var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
 
                 var model = new Announce
@@ -53,7 +54,7 @@ namespace AnnounceEverything.Controllers
                     Price = vm.Price,
                     ConditionId = vm.ConditionId,
                     CategoryId = vm.CategoryId,
-                    DateTime = vm.GetFullDate(),
+                    DateTime = DateTime.Now,
                     Image = vm.Image,
                     ProvinceId = vm.ProvinceId,
                     Description = vm.Description
