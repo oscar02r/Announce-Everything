@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 using AnnounceEverything.Models;
 using AnnounceEverything.ViewModels;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
@@ -17,6 +19,7 @@ namespace AnnounceEverything.Controllers
         {
             _context = context;
         }
+
         //[Authorize]
         public IActionResult Create()
         {
@@ -30,9 +33,40 @@ namespace AnnounceEverything.Controllers
             {
                 Category = new SelectList(category, "Id", "Name"),
                 Condition = new SelectList(conditon, "Id", "Name"),
-                Province = new SelectList(province, "Id", "Name"),
+                Province = new SelectList(province, "Id", "Name")
             };
             return View(vm);
+        }
+
+        [HttpPost]
+        [Authorize]
+        public IActionResult Create(AnnounceViewModel vm)
+        {
+            if (ModelState.IsValid)
+            {
+                var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+
+                var model = new Announce
+                {
+                    UserId = userId,
+                    Title = vm.Title,
+                    Price = vm.Price,
+                    ConditionId = vm.ConditionId,
+                    CategoryId = vm.CategoryId,
+                    DateTime = vm.GetFullDate(),
+                    Image = vm.Image,
+                    ProvinceId = vm.ProvinceId,
+                    Description = vm.Description
+                 
+                };
+
+                _context.Add(model);
+                _context.SaveChanges();
+
+                return RedirectToAction("Index","Home");
+            }
+            
+            return View();
         }
     }
 }

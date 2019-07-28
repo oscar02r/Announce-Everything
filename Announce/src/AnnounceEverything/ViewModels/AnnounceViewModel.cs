@@ -50,6 +50,14 @@ namespace AnnounceEverything.ViewModels
         [Required]
         public AppUser User { get; set; }
 
+        public string Date { get; set; }
+        public string Time { get; set; }
+
+        public DateTime GetFullDate(){
+
+            return DateTime.Parse($"{Date} {Time}");
+        }
+
 
     }
 }
