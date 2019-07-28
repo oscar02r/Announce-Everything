@@ -49,5 +49,7 @@ namespace AnnounceEverything.ViewModels
 
         [Required]
         public AppUser User { get; set; }
+
+
     }
 }
